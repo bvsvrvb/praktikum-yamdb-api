@@ -1,10 +1,9 @@
-import os
 import csv
+import os
 
 from django.conf import settings
 from django.core.management import BaseCommand
-
-from reviews.models import TitleGenre, Title
+from reviews.models import Title, TitleGenre
 
 
 class Command(BaseCommand):

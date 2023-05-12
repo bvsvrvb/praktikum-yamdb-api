@@ -1,11 +1,10 @@
-import os
 import csv
+import os
 
 from django.conf import settings
 from django.core.management import BaseCommand
 from django.shortcuts import get_object_or_404
-
-from reviews.models import Title, Category
+from reviews.models import Category, Title
 
 
 class Command(BaseCommand):

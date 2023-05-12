@@ -1,35 +1,24 @@
-from django.shortcuts import get_object_or_404
 from django.contrib.auth.tokens import default_token_generator
-from rest_framework import viewsets, status, filters
+from django.db.models import Avg
+from django.shortcuts import get_object_or_404
 from django_filters import rest_framework as dj_filters
-from rest_framework.decorators import api_view, action
+from rest_framework import filters, status, viewsets
+from rest_framework.decorators import action, api_view
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
-from django.db.models import Avg
+from reviews.models import Category, Genre, Review, Title, User
 
-from .mixins import CreateListDestroyViewSet
-from reviews.models import Title, User, Genre, Review, Category
 from .filters import TitleFilter
+from .mixins import CreateListDestroyViewSet
+from .permissions import (IsAdminUser, ReviewsCommentPermission,
+                          TitlesCategoriesGenresPermission)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, GetTokenSerializer,
+                          PostTitleSerializer, ReviewSerializer,
+                          SignUpSerializer, TitleSerializer, UserSerializer)
 from .utils import to_send_mail
-from .serializers import (
-    ReviewSerializer,
-    UserSerializer,
-    SignUpSerializer,
-    GetTokenSerializer,
-    TitleSerializer,
-    CommentSerializer,
-    GenreSerializer,
-    CategorySerializer,
-    PostTitleSerializer
-)
-from .permissions import (
-    IsAdminUser,
-    ReviewsCommentPermission,
-    TitlesCategoriesGenresPermission
-)
-
 
 RANDOM_MIN = 100000
 RANDOM_MAX = 999999

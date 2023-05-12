@@ -2,10 +2,8 @@ import csv
 
 from django.conf import settings
 from django.core.management import BaseCommand
-
-from reviews.models import (
-    TitleGenre, Title, Genre, User, Category, Review, Comment
-)
+from reviews.models import (Category, Comment, Genre, Review, Title,
+                            TitleGenre, User)
 
 IMPORT_ORDER = {
     User: 'users.csv',

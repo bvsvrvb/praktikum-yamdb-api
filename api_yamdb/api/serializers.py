@@ -1,10 +1,8 @@
-from django.utils.timezone import now
-
-from django.shortcuts import get_object_or_404
-from rest_framework import serializers
 from django.core.validators import MaxValueValidator, MinValueValidator
-
-from reviews.models import (Title, Category, User, Review, Comment, Genre)
+from django.shortcuts import get_object_or_404
+from django.utils.timezone import now
+from rest_framework import serializers
+from reviews.models import Category, Comment, Genre, Review, Title, User
 
 
 class GenreSerializer(serializers.ModelSerializer):

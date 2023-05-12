@@ -1,11 +1,9 @@
-import os
 import csv
+import os
 
 from django.conf import settings
 from django.core.management import BaseCommand
-
 from reviews.models import User
-
 
 # ALREDY_LOADED_ERROR_MESSAGE = """
 # База данных уже существует.

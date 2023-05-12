@@ -1,5 +1,5 @@
-from django.utils.timezone import now
 from django.core.exceptions import ValidationError
+from django.utils.timezone import now
 
 
 def validate_max_year(value):
