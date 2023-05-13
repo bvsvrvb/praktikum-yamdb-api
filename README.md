@@ -25,10 +25,10 @@ API YaMDb собирает отзывы пользователей на прои
 
 ### Workflow состоит из четырёх шагов:
 
-    * Проверка кода тестами.
-    * Сборка и публикация образа на DockerHub.
-    * Автоматический деплой и запуск контейнеров на удаленном сервере.
-    * Отправка уведомления в телеграм-чат.
+* Проверка кода тестами.
+* Сборка и публикация образа на DockerHub.
+* Автоматический деплой и запуск контейнеров на удаленном сервере.
+* Отправка уведомления в телеграм-чат.
 
 - Склонировать репозиторий
 
@@ -63,25 +63,25 @@ scp default.conf <username>@<host>:/home/<username>/nginx/
 
 - Для работы с Workflow добавить в Secrets GitHub переменные окружения:
 
-    ```
-    DB_ENGINE=<django.db.backends.postgresql>
-    DB_NAME=<имя базы данных postgres>
-    DB_USER=<пользователь бд>
-    DB_PASSWORD=<пароль>
-    DB_HOST=<db>
-    DB_PORT=<5432>
-    
-    DOCKER_PASSWORD=<пароль от DockerHub>
-    DOCKER_USERNAME=<имя пользователя>
-    
-    USER=<username для подключения к серверу>
-    HOST=<IP сервера>
-    PASSPHRASE=<пароль для сервера, если он установлен>
-    SSH_KEY=<ваш SSH ключ (для получения команда: cat ~/.ssh/id_rsa)>
+```
+DB_ENGINE=<django.db.backends.postgresql>
+DB_NAME=<имя базы данных postgres>
+DB_USER=<пользователь бд>
+DB_PASSWORD=<пароль>
+DB_HOST=<db>
+DB_PORT=<5432>
 
-    TELEGRAM_TO=<ID чата, в который придет сообщение>
-    TELEGRAM_TOKEN=<токен вашего бота>
-    ```
+DOCKER_PASSWORD=<пароль от DockerHub>
+DOCKER_USERNAME=<имя пользователя>
+
+USER=<username для подключения к серверу>
+HOST=<IP сервера>
+PASSPHRASE=<пароль для сервера, если он установлен>
+SSH_KEY=<ваш SSH ключ (для получения команда: cat ~/.ssh/id_rsa)>
+
+TELEGRAM_TO=<ID чата, в который придет сообщение>
+TELEGRAM_TOKEN=<токен вашего бота>
+```
 
 - После успешного выполнения Workflow выполнить следующие действия (только при первом деплое):
 
