@@ -57,14 +57,14 @@ git clone https://github.com/bvsvrvb/praktikum-yamdb-api.git
 cd infra
 ```
 
-Создать `.env` файл:
+Создать `.env` файл с переменными окружения:
 ```
-DB_ENGINE=<django.db.backends.postgresql>
+DB_ENGINE=django.db.backends.postgresql
 DB_NAME=<имя базы данных postgres>
 DB_USER=<пользователь бд>
 DB_PASSWORD=<пароль>
-DB_HOST=<db>
-DB_PORT=<5432>
+DB_HOST=db
+DB_PORT=5432
 ```
 
 Собрать и запустить контейнеры:
@@ -103,12 +103,12 @@ docker-compose up
 
 ### Для работы с Workflow GitHub Actions необходимо добавить в GitHub Secrets переменные окружения:
 ```
-DB_ENGINE=<django.db.backends.postgresql>
+DB_ENGINE=django.db.backends.postgresql
 DB_NAME=<имя базы данных postgres>
 DB_USER=<пользователь бд>
 DB_PASSWORD=<пароль>
-DB_HOST=<db>
-DB_PORT=<5432>
+DB_HOST=db
+DB_PORT=5432
 
 DOCKER_PASSWORD=<пароль от DockerHub>
 DOCKER_USERNAME=<имя пользователя>
@@ -133,12 +133,12 @@ ssh <username>@<host>
 sudo apt install docker.io 
 ```
 
-Установить docker-compose на сервере:
+Установить Docker Compose на сервере:
 ```bash
 sudo apt install docker-compose
 ```
 
-Скопировать файлы docker-compose.yaml и default.conf на сервер:
+Скопировать файлы `docker-compose.yaml` и `default.conf` на сервер:
 ```bash
 scp docker-compose.yaml <username>@<host>:/home/<username>/
 scp default.conf <username>@<host>:/home/<username>/nginx/
