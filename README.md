@@ -54,7 +54,7 @@ redoc/
 git clone https://github.com/bvsvrvb/praktikum-yamdb-api.git
 ```
 ```bash
-cd infra
+cd praktikum-yamdb-api/infra
 ```
 
 Создать `.env` файл с переменными окружения:
